@@ -4,6 +4,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
+import ro.jlg.academy.satcc.domain.Company;
 import ro.jlg.academy.satcc.domain.Satellite;
 
 import javax.swing.table.TableRowSorter;
@@ -28,6 +29,12 @@ public class SatelliteRepositoryImpl {
     public void delete(final String satelliteId) {
         final Query query = new Query(Criteria.where("_id").is(satelliteId));
         this.mongoTemplate.remove(query, Satellite.class);
+    }
+
+    public List<Satellite> findByOrbit(final Integer orbit) {
+        final Query query = new Query();
+        query.addCriteria(Criteria.where("orbitAltitude").is(orbit));
+        return this.mongoTemplate.find(query, Satellite.class);
     }
 
 }

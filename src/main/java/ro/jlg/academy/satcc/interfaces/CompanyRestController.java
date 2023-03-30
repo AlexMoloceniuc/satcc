@@ -41,5 +41,4 @@ public class CompanyRestController {
         return ResponseEntity.ok().build();
     }
 
-
 }

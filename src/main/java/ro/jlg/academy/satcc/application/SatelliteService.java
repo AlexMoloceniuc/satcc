@@ -61,4 +61,7 @@ public class SatelliteService {
         return this.companyRepository.findByName(companyName);
     }
 
+    public List<Satellite> getByOrbit(Integer orbit) {
+        return this.satelliteRepository.findByOrbit(orbit);
+    }
 }

@@ -39,4 +39,9 @@ public class SatelliteRestController {
         this.satelliteService.delete(satelliteId);
         return ResponseEntity.ok().build();
     }
+    @GetMapping("/satellites/{orbit}")
+    public ResponseEntity<List<Satellite>> getAllByOrbit(final @PathVariable Integer orbit){
+        return ResponseEntity.ok(this.satelliteService.getByOrbit(orbit));
+    }
+
 }

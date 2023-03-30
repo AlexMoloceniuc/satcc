@@ -1,5 +1,8 @@
 package ro.jlg.academy.satcc.domain;
 
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -46,4 +49,5 @@ public class Satellite {
         this.orbitAltitude = orbitAltitude;
         this.launchDate = launchDate;
     }
+
 }
