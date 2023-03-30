@@ -40,5 +40,3 @@ public class SatelliteRestController {
         return ResponseEntity.ok().build();
     }
 }
-
-// To Do:

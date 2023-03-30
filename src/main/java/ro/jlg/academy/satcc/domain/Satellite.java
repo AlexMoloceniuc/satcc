@@ -1,18 +1,19 @@
 package ro.jlg.academy.satcc.domain;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Satellite {
     private final String id;
     private String companyName;
     private Integer orbitAltitude;
-    private LocalDateTime launchDate;
+    private LocalDate launchDate;
 
     public Satellite(
             final String id,
             final String companyName,
             final Integer orbitAltitude,
-            final LocalDateTime launchDate
+            final LocalDate launchDate
     ) {
         this.id = id;
         this.companyName = companyName;
@@ -32,14 +33,14 @@ public class Satellite {
         return this.orbitAltitude;
     }
 
-    public LocalDateTime getLaunchDate() {
+    public LocalDate getLaunchDate() {
         return this.launchDate;
     }
 
     public void update(
             final String companyName,
             final Integer orbitAltitude,
-            final LocalDateTime launchDate
+            final LocalDate launchDate
     ) {
         this.companyName = companyName;
         this.orbitAltitude = orbitAltitude;

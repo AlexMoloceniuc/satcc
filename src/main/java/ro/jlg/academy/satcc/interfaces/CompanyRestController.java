@@ -18,8 +18,6 @@ public class CompanyRestController {
 
     @PostMapping("/companies")
     public ResponseEntity<Void> create(final @RequestBody CreateUpdateCompanyDTO dto){
-        System.out.println(dto.getName());
-        System.out.println(dto.getNoOfSatellites());
 
         this.companyService.create(dto);
         return ResponseEntity.ok().build();

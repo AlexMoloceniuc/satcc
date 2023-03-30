@@ -26,10 +26,12 @@ public class CompanyRepositoryImpl {
         return this.mongoTemplate.findById(id, Company.class);
     }
 
- //   public Company findByName(final String name) {
- //       return this.mongoTemplate.findBy(name, Company.class);
-    //  }
+    public Company findByName(final String companyName) {
+        final Query query = new Query();
+        query.addCriteria(Criteria.where("name").is(companyName));
 
+        return this.mongoTemplate.findOne(query, Company.class);
+    }
     public void delete(final String id) {
         final Query query = new Query();
         query.addCriteria(Criteria.where("_id").is(id));

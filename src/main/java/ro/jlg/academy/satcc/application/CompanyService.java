@@ -1,7 +1,10 @@
 package ro.jlg.academy.satcc.application;
 
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import ro.jlg.academy.satcc.domain.Company;
+import ro.jlg.academy.satcc.domain.Satellite;
 import ro.jlg.academy.satcc.infrastructure.CompanyRepositoryImpl;
 import ro.jlg.academy.satcc.interfaces.dto.CreateUpdateCompanyDTO;
 
@@ -29,6 +32,7 @@ public class CompanyService {
         return this.companyRepository.findAll();
     }
 
+
     public void update(final String companyId, final CreateUpdateCompanyDTO dto) {
         final Company company = this.companyRepository.findById(companyId);
         company.update(dto.getName(),dto.getNoOfSatellites());
@@ -38,4 +42,6 @@ public class CompanyService {
     public void delete(final String id) {
         this.companyRepository.delete(id);
     }
+
+
 }
